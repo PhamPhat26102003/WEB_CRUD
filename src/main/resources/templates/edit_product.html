@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit product</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/new">Add product</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 container justify-content-center card">
+            <h1 class="text-center">Edit product</h1>
+            <div class="card-body">
+                <form th:action="@{/create}" th:object="${product}" method="post">
+
+                    <div class="form-group">
+                        <label class="control-label" for="id"> ID </label>
+                        <input id="id" class="form-control" th:field="*{id}"
+                               required autofocus="autofocus" readonly = "readonly" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="name"> Name </label>
+                        <input id="name" class="form-control" th:field="*{name}"
+                               required autofocus="autofocus" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="brand"> Brand </label>
+                        <input id="brand" class="form-control" th:field="*{brand}"
+                               required autofocus="autofocus" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="origin"> Origin </label>
+                        <input id="origin" class="form-control" th:field="*{origin}"
+                               required autofocus="autofocus" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="price"> Price </label>
+                        <input id="price" class="form-control" th:field="*{price}"
+                               required autofocus="autofocus" />
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
